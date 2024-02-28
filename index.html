@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button">Fetch</button>
+
+    <input type="text" list="cars">
+
+    <datalist id="cars">
+        <option value="BMW">BMW</option>
+        <option value="Tata">Tata</option>
+    </datalist>
+
+    <script>
+        document.querySelector("button").onclick = async () => {
+            let request = await fetch("http://127.0.0.1:8000/main/api/");
+            let data = await request.json();
+            console.log(data);
+        }
+    </script>
+
+</body>
+</html>
